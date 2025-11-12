@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 
-const socket = io("https://xo-game-backend.onrender.com", { transports: ["websocket"] });
+const socket = io(
+  import.meta.env.VITE_SERVER_URL || process.env.REACT_APP_SERVER_URL || "http://localhost:5000",
+  { transports: ["websocket"] }
+);
 
 export default function App() {
   const [mode, setMode] = useState("offline"); // "offline" | "online"
