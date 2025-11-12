@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:5000", { transports: ["websocket"] });
+const socket = io("https://xo-game-xtxf.onrender.com", { transports: ["websocket"] });
 
 export default function App() {
   const [mode, setMode] = useState("offline"); // "offline" | "online"
